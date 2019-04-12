@@ -3,8 +3,8 @@ const path = require('path'),
 	koaRouter = require('koa-router')(),
 	logger = require('koa-logger'),
 	koaStatic = require('koa-static'),
-	historyApiFallback = require('koa-history-api-fallback');
-	//user = require('./routes/user.js'),
+	historyApiFallback = require('koa-history-api-fallback'),
+	user = require('./routes/koa_user.js');
 	//goods = require('./routes/goods.js'),
 	//imageRoute = require('./routes/image.js');
 
@@ -24,7 +24,7 @@ koa.on('error', function(err, ctx){
 })
 koa.use(koaStatic(path.resolve('dist')))// 将 webpack 打包好的项目目录作为 Koa 静态文件服务的目录
 
-//koaRouter.use('/auth',user.routes());// 挂载到 koa-router 上，同时会让所有的 user 的请求路径前面加上 '/auth' 
+koaRouter.use('/auth',user.routes());// 挂载到 koa-router 上，同时会让所有的 user 的请求路径前面加上 '/auth' 
 //koaRouter.use(goods.routes());
 //koaRouter.use(imageRoute.routes());
 koa.use(koaRouter.routes())// 将路由规则挂载到Koa上。
