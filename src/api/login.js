@@ -1,5 +1,5 @@
-import request from('@/utils/request')
- 
+import request from '@/utils/request.js'
+
 
  export function loginByUsername(username,password){
  	const data={
@@ -7,7 +7,7 @@ import request from('@/utils/request')
  		password
  	}
  	return request({
- 		url:'/login/login',
+ 		url:'/auth',
  		method: 'post',
  		data
  	})

@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+ import { loginByUsername } from '@/api/login'
 
 Vue.use(Vuex)
 const store = new Vuex.Store( 
@@ -15,7 +16,7 @@ const store = new Vuex.Store(
 			const username = userInfo.username.trim()
 			const password = userInfo.password.trim()
 			return new Promise(function(resolve,reject) {
-				this.$http.post('/auto',{username,password});
+				loginByUsername(username,password);
 			})
 		}
 	}

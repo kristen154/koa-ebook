@@ -20,7 +20,7 @@ service.interceptors.request.use(
 	}
 )
 
-ervice.interceptors.response.use(
+service.interceptors.response.use(
 	response =>response,
 	error => {
 		console.log('err' + error)
@@ -32,3 +32,5 @@ ervice.interceptors.response.use(
 		return Promise.reject(error)
 	}
 )
+
+export default service

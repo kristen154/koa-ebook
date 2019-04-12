@@ -1,8 +1,8 @@
-const Sequelize = request('sequelize');
+const Sequelize = require('sequelize');
 
-const theDb = new Sequelize('mysql://root:12345@localhost/ebook',{
+const theDb = new Sequelize('mysql://root:123456@localhost/ebook',{
 	define: {
-		timestamps: fasle
+		timestamps: false
 	}
 })
 
