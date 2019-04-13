@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { Message } from 'element-ui'
 import store from '@/store'
-
+import {getToken} from '@/utils/auth.js'
 const service = axios.create({
 	baseURL: 'http://localhost:8080',
 	timeout: 5000

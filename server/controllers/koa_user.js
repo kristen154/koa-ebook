@@ -15,7 +15,7 @@ const postUserAuth  = async function(){
 		}else{
 			const userToken = {
 				id: userInfo.id,
-				name: userInfo.user_name,
+				name: userInfo.username,
 				originExp: Date.now() + 60 * 60 * 1000,
 
 			}
